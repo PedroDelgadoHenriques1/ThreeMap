@@ -1,0 +1,59 @@
+/* style.css */
+.treemap {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.coluna {
+    flex: 1; /* Cada coluna ocupa metade do espaço */
+    box-sizing: border-box;
+    padding: 10px;
+    overflow-y: auto; /* Permite rolar verticalmente se necessário */
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+.ganhos {
+    background-color: #e0f5e0; /* Cor de fundo para a coluna de ganhos */
+}
+.perdas {
+    background-color: #f5e0e0; /* Cor de fundo para a coluna de perdas */
+}
+.titulo {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+    background-color: #333; /* Cor de fundo fixa para o título */
+    color: #fff; /* Cor do texto fixa */
+    padding: 10px;
+    border-radius: 5px; /* Borda arredondada */
+    width: 100%;
+}
+.quadrado {
+    position: relative;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Garante que o texto não ultrapasse o quadrado */
+    text-align: center;
+    box-sizing: border-box;
+    border: 1px solid #000; /* Contorno simples */
+}
+.quadrado div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+.quadrado span {
+    position: relative;
+    color: #000; /* Cor do texto preta */
+    z-index: 1; /* Garante que o texto fique sobre a cor de fundo */
+}
