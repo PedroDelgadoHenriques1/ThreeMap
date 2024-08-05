@@ -2,6 +2,8 @@
 
 Este projeto exibe um **Treemap** interativo que visualiza ganhos e perdas de ações. O Treemap divide o espaço em quadrados coloridos com base no valor das ações, permitindo uma visualização rápida e intuitiva dos dados.
 
+![image](https://github.com/user-attachments/assets/9c90d10f-54ce-44ca-9744-3258020604bd)
+
 ## Descrição
 
 O projeto gera um Treemap com ações fictícias e mostra duas colunas:
