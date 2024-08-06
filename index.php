@@ -1,8 +1,8 @@
 <?php
 
 for ($i = 1; $i <= 100; $i++) {
-    $valor = rand(-100, 100); // Valor aleatório entre -100 e 100
-    $cor = $valor > 0 ? 'green' : 'red'; // Define a cor baseada no valor
+    $valor = rand(-100, 100); 
+    $cor = $valor > 0 ? 'green' : 'red'; 
     $acoes[] = [
         'nome' => 'Ação ' . $i,
         'valor' => $valor,
@@ -10,15 +10,15 @@ for ($i = 1; $i <= 100; $i++) {
     ];
 }
 
-// Separar ganhos e perdas
+
 $ganhos = array_filter($acoes, fn($acao) => $acao['valor'] > 0);
 $perdas = array_filter($acoes, fn($acao) => $acao['valor'] < 0);
 
-// Calcular o total para normalizar os tamanhos
+
 $total_ganhos = array_sum(array_column($ganhos, 'valor'));
 $total_perdas = array_sum(array_map(fn($acao) => abs($acao['valor']), $perdas));
 
-// Gerar o HTML para o treemap
+
 ?>
 
 <!DOCTYPE html>
@@ -36,11 +36,11 @@ $total_perdas = array_sum(array_map(fn($acao) => abs($acao['valor']), $perdas));
         <?php foreach ($ganhos as $acao): ?>
             <?php 
                 $percentual = $acao['valor'];
-                $largura = rand(60, 180); // Largura aleatória entre 60px e 180px
-                $altura = rand(40, 120); // Altura aleatória entre 40px e 120px
+                $largura = rand(60, 180); 
+                $altura = rand(40, 120); 
                 
-                // Ajustar opacidade: Percentuais altos são mais visíveis, percentuais baixos são menos transparentes
-                $opacidade = 0.2 + (0.8 * ($percentual / 100)); // Opacidade vai de 0.3 (para 0%) a 1.0 (para 300%)
+                
+                $opacidade = 0.2 + (0.8 * ($percentual / 100)); 
             ?>
             <div class="quadrado" style="width: <?= $largura ?>px; height: <?= $altura ?>px;">
                 <span>
@@ -56,11 +56,11 @@ $total_perdas = array_sum(array_map(fn($acao) => abs($acao['valor']), $perdas));
             <?php foreach ($perdas as $acao): ?>
                 <?php 
                     $percentual = abs($acao['valor']);
-                    $largura = rand(60, 180); // Largura aleatória entre 60px e 180px
-                    $altura = rand(40, 120); // Altura aleatória entre 40px e 120px
+                    $largura = rand(60, 180); 
+                    $altura = rand(40, 120); 
                     
-                    // Ajustar opacidade: Percentuais altos são mais visíveis, percentuais baixos são menos transparentes
-                    $opacidade = 0.2 + (0.8 * ($percentual / 300)); // Opacidade vai de 0.3 (para 0%) a 1.0 (para 300%)
+                    
+                    $opacidade = 0.2 + (0.8 * ($percentual / 300));
                 ?>
                 <div class="quadrado" style="width: <?= $largura ?>px; height: <?= $altura ?>px;">
                     <span>
